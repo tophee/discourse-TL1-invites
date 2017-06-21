@@ -19,5 +19,23 @@ after_initialize do
       ) &&
       (groups.blank? || is_admin?)
     end
+    
+    def can_invite_to?(object, group_ids=nil)
+      return false unless authenticated?
+      return true if is_admin?
+      return false unless SiteSetting.enable_private_messages?
+      return false if (SiteSetting.max_invites_per_day.to_i == 0 && !is_staff?)
+      return false unless can_see?(object)
+      return false if group_ids.present?
+
+      if object.is_a?(Topic) && object.category
+        if object.category.groups.any?
+          return true if object.category.groups.all? { |g| can_edit_group?(g) }
+        end
+      end
+
+      user.has_trust_level?(TrustLevel[1])
+    end
   end
 end
+
