@@ -1,0 +1,4 @@
+plugins:
+  tl1_invites_enabled:
+    default: true
+    client: true
