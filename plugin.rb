@@ -1,8 +1,10 @@
 # name: discourse-TL1-invites
 # about: Allows TL1 users to invite new users
-# version: 0.0.1
+# version: 0.0.2
 # authors: Christoph Haug using code by Vinoth Kannan
 # # url: https://github.com/tophee/discourse-TL1-invites
+
+enabled_site_setting :tl1_invites_enabled
 
 after_initialize do
   Guardian.class_eval do
