@@ -1,3 +1,3 @@
 en:
   site_settings:
-    tl1_invites_enabled: "Enable invites for all TL1 users. Beware that enabling this entails risks because invited users are granted TL1 by default."
+    tl1_invites_enabled: "Enable invites for all TL1 users. Beware that this entails risks because invited users are granted TL1 by default."
