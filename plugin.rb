@@ -23,7 +23,7 @@ after_initialize do
     def can_invite_to?(object, group_ids=nil)
       return false unless authenticated?
       return true if is_admin?
-      return false unless SiteSetting.enable_private_messages?
+      return false unless SiteSetting.enable_personal_messages?
       return false if (SiteSetting.max_invites_per_day.to_i == 0 && !is_staff?)
       return false unless can_see?(object)
       return false if group_ids.present?
