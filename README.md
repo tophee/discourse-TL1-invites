@@ -1,3 +1,5 @@
+NOTE: This plugin is no longer functional. The plugin is no longer required to achieve TL1 invites.
+
 # discourse-TL1-invites
 
 This is a simple plugin that changes the trust level requirement for invites from TL2 to TL1. This includes forum invites as well as topic invites. The idea is to allow users to invite new users already at an early stage in order to foster community growth.
